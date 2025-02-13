@@ -1,0 +1,1 @@
+{"kind":"FETCH","data":{"headers":{"content-type":"application/json; charset=utf-8","date":"Sun, 11 Aug 2024 12:37:15 GMT","server":"Kestrel","transfer-encoding":"chunked"},"body":"W10=","status":200,"url":"http://localhost:5102/objectives/4cca2681-7105-449a-a6c2-5da7144ca801/key-results"},"revalidate":31536000,"tags":["4cca2681-7105-449a-a6c2-5da7144ca801/keyResults"]}

@@ -1,0 +1,365 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlserver"
+  url      = env("DATABASE_URL")
+}
+
+model OKR_KeyResult {
+  ID                String    @id(map: "PK_OKR_KeyResult") @db.UniqueIdentifier
+  BelongOId         String?   @db.UniqueIdentifier
+  Desc              String?   @db.NVarChar(500)
+  Progress          Decimal?  @db.Decimal(8, 4)
+  Weight            Decimal?  @db.Decimal(8, 4)
+  Remark            String?   @db.NVarChar(500)
+  SelfScoreId       String?   @db.UniqueIdentifier
+  SupervisorScoreId String?   @db.UniqueIdentifier
+  AuditBy           String?   @db.UniqueIdentifier
+  AuditByN          String?   @db.NVarChar(50)
+  AuditTime         DateTime? @db.DateTime
+  AuditLevel        Int?
+  AuditRemarks      String?   @db.NVarChar(500)
+  StatusCode        String?   @db.NVarChar(50)
+  IsDeleted         Int?      @default(0, map: "DF_OKR_KeyResult_IsDelete")
+  CreateBy          String?   @db.UniqueIdentifier
+  CreateOn          DateTime? @db.DateTime
+  UpdatedBy         String?   @db.UniqueIdentifier
+  UpdatedOn         DateTime? @db.DateTime
+  SubmittedBy       String?   @db.UniqueIdentifier
+  SubmittedOn       DateTime? @db.DateTime
+  DeletedBy         String?   @db.UniqueIdentifier
+  DeletedOn         DateTime? @db.DateTime
+  Lvl01AuditBy      String?   @db.UniqueIdentifier
+  Lvl01AuditByN     String?   @db.NVarChar(50)
+  Lvl01AuditTime    DateTime? @db.DateTime
+  Lvl02AuditBy      String?   @db.UniqueIdentifier
+  Lvl02AuditByN     String?   @db.NVarChar(50)
+  Lvl02AuditTime    DateTime? @db.DateTime
+  Lvl03AuditBy      String?   @db.UniqueIdentifier
+  Lvl03AuditByN     String?   @db.NVarChar(50)
+  Lvl03AuditTime    DateTime? @db.DateTime
+  Lvl04AuditBy      String?   @db.UniqueIdentifier
+  Lvl04AuditByN     String?   @db.NVarChar(50)
+  Lvl04AuditTime    DateTime? @db.DateTime
+  Lvl05AuditBy      String?   @db.UniqueIdentifier
+  Lvl05AuditByN     String?   @db.NVarChar(50)
+  Lvl05AuditTime    DateTime? @db.DateTime
+  Lvl06AuditBy      String?   @db.UniqueIdentifier
+  Lvl06AuditByN     String?   @db.NVarChar(50)
+  Lvl06AuditTime    DateTime? @db.DateTime
+  Lvl07AuditBy      String?   @db.UniqueIdentifier
+  Lvl07AuditByN     String?   @db.NVarChar(50)
+  Lvl07AuditTime    DateTime? @db.DateTime
+  Lvl08AuditBy      String?   @db.UniqueIdentifier
+  Lvl08AuditByN     String?   @db.NVarChar(50)
+  Lvl08AuditTime    DateTime? @db.DateTime
+  Lvl09AuditBy      String?   @db.UniqueIdentifier
+  Lvl09AuditByN     String?   @db.NVarChar(50)
+  Lvl09AuditTime    DateTime? @db.DateTime
+  Lvl10AuditBy      String?   @db.UniqueIdentifier
+  Lvl10AuditByN     String?   @db.NVarChar(50)
+  Lvl10AuditTime    DateTime? @db.DateTime
+  FinalAuditBy      String?   @db.UniqueIdentifier
+  FinalAuditByN     String?   @db.NVarChar(50)
+  FinalAuditTime    DateTime? @db.DateTime
+  FinalAuditRemarks String?   @db.NVarChar(500)
+  Lvl01AuditRemarks String?   @db.NVarChar(500)
+  Lvl02AuditRemarks String?   @db.NVarChar(500)
+  Lvl03AuditRemarks String?   @db.NVarChar(500)
+  Lvl04AuditRemarks String?   @db.NVarChar(500)
+  Lvl05AuditRemarks String?   @db.NVarChar(500)
+  Lvl06AuditRemarks String?   @db.NVarChar(500)
+  Lvl07AuditRemarks String?   @db.NVarChar(500)
+  Lvl08AuditRemarks String?   @db.NVarChar(500)
+  Lvl09AuditRemarks String?   @db.NVarChar(500)
+  Lvl10AuditRemarks String?   @db.NVarChar(500)
+  TEXT00            String?   @db.NVarChar(500)
+  TEXT01            String?   @db.NVarChar(500)
+  TEXT02            String?   @db.NVarChar(500)
+  TEXT03            String?   @db.NVarChar(500)
+  DATE00            DateTime? @db.DateTime
+  DATE01            DateTime? @db.DateTime
+  DATE02            DateTime? @db.DateTime
+  DATE03            DateTime? @db.DateTime
+}
+
+model OKR_Objective {
+  ID                String    @id(map: "PK_OKR_Objective") @db.UniqueIdentifier
+  BelongToEmplId    String?   @db.UniqueIdentifier
+  BelongToEmplN     String?   @db.NVarChar(50)
+  OKRPeriodId       String?   @db.UniqueIdentifier
+  ObjType           String?   @db.UniqueIdentifier
+  Strategic_O_Id    String?   @db.UniqueIdentifier
+  Desc              String?   @db.NVarChar(500)
+  Progress          Decimal?  @db.Decimal(8, 4)
+  Weight            Decimal?  @db.Decimal(8, 4)
+  Remark            String?   @db.NVarChar(500)
+  AlignType         String?   @db.VarChar(2)
+  AlignId           String?   @db.UniqueIdentifier
+  SelfScoreId       String?   @db.UniqueIdentifier
+  SupervisorScoreId String?   @db.UniqueIdentifier
+  AuditBy           String?   @db.UniqueIdentifier
+  AuditByN          String?   @db.NVarChar(50)
+  AuditTime         DateTime? @db.DateTime
+  AuditLevel        Int?
+  AuditRemarks      String?   @db.NVarChar(500)
+  StatusCode        String?   @db.NVarChar(50)
+  IsDeleted         Int?      @default(0, map: "DF_OKR_Objective_IsDelete")
+  CreateBy          String?   @db.UniqueIdentifier
+  CreateOn          DateTime? @db.DateTime
+  UpdatedBy         String?   @db.UniqueIdentifier
+  UpdatedOn         DateTime? @db.DateTime
+  SubmittedBy       String?   @db.UniqueIdentifier
+  SubmittedOn       DateTime? @db.DateTime
+  DeletedBy         String?   @db.UniqueIdentifier
+  DeletedOn         DateTime? @db.DateTime
+  Lvl01AuditBy      String?   @db.UniqueIdentifier
+  Lvl01AuditByN     String?   @db.NVarChar(50)
+  Lvl01AuditTime    DateTime? @db.DateTime
+  Lvl02AuditBy      String?   @db.UniqueIdentifier
+  Lvl02AuditByN     String?   @db.NVarChar(50)
+  Lvl02AuditTime    DateTime? @db.DateTime
+  Lvl03AuditBy      String?   @db.UniqueIdentifier
+  Lvl03AuditByN     String?   @db.NVarChar(50)
+  Lvl03AuditTime    DateTime? @db.DateTime
+  Lvl04AuditBy      String?   @db.UniqueIdentifier
+  Lvl04AuditByN     String?   @db.NVarChar(50)
+  Lvl04AuditTime    DateTime? @db.DateTime
+  Lvl05AuditBy      String?   @db.UniqueIdentifier
+  Lvl05AuditByN     String?   @db.NVarChar(50)
+  Lvl05AuditTime    DateTime? @db.DateTime
+  Lvl06AuditBy      String?   @db.UniqueIdentifier
+  Lvl06AuditByN     String?   @db.NVarChar(50)
+  Lvl06AuditTime    DateTime? @db.DateTime
+  Lvl07AuditBy      String?   @db.UniqueIdentifier
+  Lvl07AuditByN     String?   @db.NVarChar(50)
+  Lvl07AuditTime    DateTime? @db.DateTime
+  Lvl08AuditBy      String?   @db.UniqueIdentifier
+  Lvl08AuditByN     String?   @db.NVarChar(50)
+  Lvl08AuditTime    DateTime? @db.DateTime
+  Lvl09AuditBy      String?   @db.UniqueIdentifier
+  Lvl09AuditByN     String?   @db.NVarChar(50)
+  Lvl09AuditTime    DateTime? @db.DateTime
+  Lvl10AuditBy      String?   @db.UniqueIdentifier
+  Lvl10AuditByN     String?   @db.NVarChar(50)
+  Lvl10AuditTime    DateTime? @db.DateTime
+  FinalAuditBy      String?   @db.UniqueIdentifier
+  FinalAuditByN     String?   @db.NVarChar(50)
+  FinalAuditTime    DateTime? @db.DateTime
+  FinalAuditRemarks String?   @db.NVarChar(500)
+  Lvl01AuditRemarks String?   @db.NVarChar(500)
+  Lvl02AuditRemarks String?   @db.NVarChar(500)
+  Lvl03AuditRemarks String?   @db.NVarChar(500)
+  Lvl04AuditRemarks String?   @db.NVarChar(500)
+  Lvl05AuditRemarks String?   @db.NVarChar(500)
+  Lvl06AuditRemarks String?   @db.NVarChar(500)
+  Lvl07AuditRemarks String?   @db.NVarChar(500)
+  Lvl08AuditRemarks String?   @db.NVarChar(500)
+  Lvl09AuditRemarks String?   @db.NVarChar(500)
+  Lvl10AuditRemarks String?   @db.NVarChar(500)
+  TEXT00            String?   @db.NVarChar(500)
+  TEXT01            String?   @db.NVarChar(500)
+  TEXT02            String?   @db.NVarChar(500)
+  TEXT03            String?   @db.NVarChar(500)
+  DATE00            DateTime? @db.DateTime
+  DATE01            DateTime? @db.DateTime
+  DATE02            DateTime? @db.DateTime
+  DATE03            DateTime? @db.DateTime
+}
+
+model OKRBaseInfo {
+  Id          String                    @id(map: "PK_OKRBaseInfo") @db.UniqueIdentifier
+  GroupCode   String?                   @db.NVarChar(50)
+  GroupName   String?                   @db.NVarChar(50)
+  Code        String?                   @db.NVarChar(50)
+  Name        String?                   @db.NVarChar(50)
+  Name_1      String?                   @db.NVarChar(50)
+  Name_2      String?                   @db.NVarChar(50)
+  Remark      String?                   @db.NVarChar(50)
+  sColumn1    String?                   @db.NVarChar(50)
+  sColumn2    String?                   @db.NVarChar(50)
+  iColumn1    Int?
+  iColumn2    Int?
+  CompanyCode String?                   @db.VarChar(20)
+  IsDeleted   Boolean?
+  CreateBy    String?                   @db.UniqueIdentifier
+  CreateOn    DateTime?                 @db.DateTime
+  LastupdBy   String?                   @db.UniqueIdentifier
+  LastupdOn   DateTime?                 @db.DateTime
+  DeleteBy    String?                   @db.UniqueIdentifier
+  DeleteOn    DateTime?                 @db.DateTime
+  RowVersion  Unsupported("timestamp")?
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by Prisma Client.
+model OKRDepartment {
+  Id             String    @db.UniqueIdentifier
+  Level          Int
+  ParentId       String?   @db.UniqueIdentifier
+  ParentCode     String?   @db.VarChar(20)
+  SelfCode       String    @db.VarChar(20)
+  Code           String    @db.VarChar(20)
+  FullCode       String?   @db.VarChar(1000)
+  CompanyCode    String?   @db.VarChar(10)
+  Name           String    @db.NVarChar(50)
+  Name_1         String?   @db.NVarChar(50)
+  Name_2         String?   @db.NVarChar(50)
+  FullName       String?   @db.NVarChar(500)
+  ClassList      String?   @db.NVarChar(50)
+  ClassName      String?   @db.NVarChar(50)
+  IsUseDeptClass Boolean?
+  Remark         String?   @db.NVarChar(50)
+  IsDelete       Boolean
+  CreateBy       String?   @db.UniqueIdentifier
+  CreateOn       DateTime? @db.DateTime
+  LastupdBy      String?   @db.UniqueIdentifier
+  LastupdOn      DateTime? @db.DateTime
+  DeleteBy       String?   @db.UniqueIdentifier
+  DeleteOn       DateTime? @db.DateTime
+  IsHide         Boolean?  @default(false, map: "DF_OKRDepartment_IsHide")
+
+  @@ignore
+}
+
+model OKRGroup {
+  GroupID       String  @id(map: "PK_OKRGroup") @db.UniqueIdentifier
+  CompanyId     String  @db.UniqueIdentifier
+  CompanyName   String? @db.NVarChar(50)
+  SecretaryId   String? @db.UniqueIdentifier
+  SecretaryName String? @db.NVarChar(50)
+  MarkerSecId   String? @db.UniqueIdentifier
+  MarkerSecName String? @db.NVarChar(50)
+  MarkerId      String? @db.UniqueIdentifier
+  MarkerName    String? @db.NVarChar(50)
+  OKRYear       Int?
+  OKRPeriodId   String? @db.UniqueIdentifier
+}
+
+model OKROrgChart {
+  ID                 String    @id(map: "PK_OKROrgChart") @db.UniqueIdentifier
+  OKRYear            Int?
+  OKRPeriod          String?   @db.UniqueIdentifier
+  EmplId             String    @db.UniqueIdentifier
+  EmplNum            String?   @db.NVarChar(20)
+  CompanyId          String?   @db.UniqueIdentifier
+  CompanyName        String?   @db.NVarChar(100)
+  Sex                String?   @db.NVarChar(100)
+  EmplName           String?   @db.NVarChar(100)
+  EmplLevel          Int?
+  DeptCode           String?   @db.NVarChar(100)
+  DeptId             String?   @db.UniqueIdentifier
+  DepartmentName     String?   @db.NVarChar(100)
+  DepartmentFullName String?   @db.NVarChar(100)
+  Position           String?   @db.NVarChar(100)
+  Rank               String?   @db.NVarChar(100)
+  EmailAdress        String?   @db.NVarChar(100)
+  employeeRankId     BigInt?
+  isDelete           Boolean   @default(false, map: "DF_OKROrgChart_isDelete")
+  CreateBy           String?   @db.UniqueIdentifier
+  CreateOn           DateTime? @default(now(), map: "DF_OKROrgChart_CreateOn") @db.DateTime
+  LastupdBy          String?   @db.UniqueIdentifier
+  LastupdOn          DateTime? @db.DateTime
+  DeleteBy           String?   @db.UniqueIdentifier
+  DeleteOn           DateTime? @db.DateTime
+  rowNum             Int?
+  Password           String?   @db.NVarChar(8)
+}
+
+model OKRPeriodSetting {
+  ID            Int       @id(map: "PK_KpiSetting") @default(autoincrement())
+  OKRYear       Int?
+  StartDate     DateTime? @db.DateTime
+  EndDate       DateTime? @db.DateTime
+  SysCode       String?   @db.NVarChar(200)
+  SysCodeValue  String?   @db.NVarChar(200)
+  isActive      Boolean   @default(false, map: "DF_OKRPeriodSetting_isEnabled")
+  OKRPeriodType String?   @db.UniqueIdentifier
+}
+
+model SysMenu {
+  Id         String   @id(map: "PK_SysMenu") @db.UniqueIdentifier
+  ParentId   String?  @db.UniqueIdentifier
+  Name       String   @db.NVarChar(50)
+  Name1      String?  @db.NVarChar(50)
+  Name2      String?  @db.NVarChar(50)
+  Link       String?  @db.NVarChar(200)
+  Order      Int?
+  Level      Int?
+  Module     String?  @db.NVarChar(50)
+  Glyph      String?  @db.NVarChar(50)
+  KeyGesture String?  @db.NVarChar(50)
+  Visiable   Boolean? @default(true, map: "DF_SysMenu_Visiable")
+  IsWorkFlow String?  @db.VarChar(50)
+}
+
+model SysRole {
+  CompanyId  String?                   @db.UniqueIdentifier
+  Id         String                    @id(map: "PK_SysRole") @db.UniqueIdentifier
+  Name       String?                   @db.NVarChar(50)
+  DESC_1     String?                   @db.NVarChar(50)
+  DESC_2     String?                   @db.NVarChar(50)
+  DESC_3     String?                   @db.NVarChar(50)
+  IsDeleted  Boolean?
+  CreateBy   String?                   @db.UniqueIdentifier
+  CreateOn   DateTime?                 @db.DateTime
+  LastupdBy  String?                   @db.UniqueIdentifier
+  LastupdOn  DateTime?                 @db.DateTime
+  DeleteBy   String?                   @db.UniqueIdentifier
+  DeleteOn   DateTime?                 @db.DateTime
+  RowVersion Unsupported("timestamp")?
+}
+
+model SysRoleMenu {
+  AutoId Int    @default(autoincrement())
+  RoleId String @db.UniqueIdentifier
+  MenuId String @db.UniqueIdentifier
+
+  @@id([RoleId, MenuId], map: "PK_SysRolePermission_1")
+}
+
+model sysuser {
+  Id                     String                   @id(map: "PK_sysuser") @db.UniqueIdentifier
+  CompanyId              String                   @db.UniqueIdentifier
+  LoginId                String?                  @db.VarChar(20)
+  Password               Bytes                    @db.VarBinary(255)
+  EmplId                 String                   @db.UniqueIdentifier
+  EmplName               String?                  @db.NVarChar(20)
+  PasswordExpDate        DateTime?                @db.DateTime
+  LastLoginOn            DateTime?                @db.DateTime
+  LastAppVersionMajor    Int?                     @default(0, map: "DF_sysuser_LastAppVersionMajor") @db.SmallInt
+  LastAppVersionMinor    Int?                     @default(0, map: "DF_sysuser_LastAppVersionMinor") @db.SmallInt
+  LastAppVersionBuild    Int?                     @default(0, map: "DF_sysuser_LastAppVersionBuild") @db.SmallInt
+  LastAppVersionRevision Int?                     @default(0, map: "DF_sysuser_LastAppVersionRevision") @db.SmallInt
+  LastVersion            String?                  @db.VarChar(20)
+  LastLanguage           String?                  @db.VarChar(20)
+  Email                  String?                  @db.NVarChar(100)
+  Tel1                   String?                  @db.NVarChar(20)
+  Tel2                   String?                  @db.NVarChar(20)
+  IsSuspend              Boolean
+  Remark                 String?                  @db.NVarChar(50)
+  CreatedBy              String                   @db.UniqueIdentifier
+  CreatedOn              DateTime                 @db.DateTime
+  LastUpdBy              String?                  @db.UniqueIdentifier
+  LastUpdOn              DateTime?                @db.DateTime
+  DeletedBy              String?                  @db.UniqueIdentifier
+  DeletedOn              DateTime?                @db.DateTime
+  RowVersion             Unsupported("timestamp")
+  IsPrintFromLocal       Boolean?                 @default(false, map: "DF_sysuser_IsPrintFromLocal")
+  UserCode               String?                  @db.VarChar(20)
+  quocompcode            String?                  @default("", map: "DF_sysuser_quocomp_6AA3C924") @db.NVarChar(50)
+  PasswordErrCount       Int?                     @default(0, map: "DF_sysuser_PasswordErrCount")
+  ErrCode                String?                  @db.VarChar(20)
+  CreateByN              String?                  @db.NVarChar(20)
+  LastupdByN             String?                  @db.NVarChar(20)
+  DeleteByN              String?                  @db.NVarChar(20)
+}
+
+model SysUserRole {
+  AutoId    Int    @default(autoincrement())
+  AccountId String @db.UniqueIdentifier
+  RoleId    String @db.UniqueIdentifier
+
+  @@id([AccountId, RoleId], map: "PK_SysUserRole")
+}
